@@ -26,6 +26,11 @@ export interface TableOfContentsItem {
   href: string;
 }
 
+export function lessonHref(lessonId: LessonId, hash = 'lesson-title'): string {
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  return `${baseUrl}?lesson=${lessonId}#${hash}`;
+}
+
 const planned = (label: string, depth?: 1 | 2): NavigationItem => ({
   label,
   badge: '规划中',
@@ -42,12 +47,12 @@ export const navigationGroups: NavigationGroup[] = [
   {
     label: '基础概念',
     items: [
-      { id: 'fundamentals', label: '基础知识', href: '/?lesson=fundamentals#lesson-title' },
+      { id: 'fundamentals', label: '基础知识', href: lessonHref('fundamentals') },
       section('着色器数据传递'),
-      { id: 'wgsl-interstage', label: 'Inter-stage 变量', href: '/?lesson=wgsl-interstage#lesson-title', depth: 1 },
-      { id: 'uniforms', label: 'Uniforms', href: '/?lesson=uniforms#lesson-title', depth: 1 },
-      { id: 'storage-buffers', label: '存储缓冲区', href: '/?lesson=storage-buffers#lesson-title', depth: 1 },
-      { id: 'vertex-buffers', label: '顶点缓冲区', href: '/?lesson=vertex-buffers#lesson-title', depth: 1 },
+      { id: 'wgsl-interstage', label: 'Inter-stage 变量', href: lessonHref('wgsl-interstage'), depth: 1 },
+      { id: 'uniforms', label: 'Uniforms', href: lessonHref('uniforms'), depth: 1 },
+      { id: 'storage-buffers', label: '存储缓冲区', href: lessonHref('storage-buffers'), depth: 1 },
+      { id: 'vertex-buffers', label: '顶点缓冲区', href: lessonHref('vertex-buffers'), depth: 1 },
       section('纹理', 1),
       planned('纹理基础', 2),
       planned('加载图像', 2),
@@ -65,7 +70,7 @@ export const navigationGroups: NavigationGroup[] = [
       planned('可选特性与限制'),
       planned('计时与性能'),
       planned('WGSL'),
-      { id: 'how-it-works', label: '工作原理', href: '/?lesson=how-it-works#lesson-title' },
+      { id: 'how-it-works', label: '工作原理', href: lessonHref('how-it-works') },
       planned('兼容性模式'),
     ],
   },
@@ -113,7 +118,7 @@ export const navigationGroups: NavigationGroup[] = [
   {
     label: '计算着色器',
     items: [
-      { id: 'compute', label: '计算着色器基础', href: '/?lesson=compute#lesson-title' },
+      { id: 'compute', label: '计算着色器基础', href: lessonHref('compute') },
       planned('图像直方图'),
       planned('图像直方图进阶'),
     ],
