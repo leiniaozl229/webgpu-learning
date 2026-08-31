@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGPU 第一章实验</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { display: grid; grid-template-rows: minmax(0, 1fr) auto; background: #0e1420; }
+      canvas { display: block; width: 100%; height: 100%; }
+      pre { margin: 0; padding: 12px 16px; background: #182235; color: #d9e7ff; }
+    </style>
+  </head>
+  <body>
+    <canvas id="webgpu-canvas">当前浏览器无法显示 WebGPU Canvas。</canvas>
+    <pre id="status" role="status">正在初始化 WebGPU…</pre>
+    <script type="module" src="./src/render.ts"></script>
+  </body>
+</html>

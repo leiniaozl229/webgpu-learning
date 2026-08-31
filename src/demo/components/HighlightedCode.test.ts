@@ -30,4 +30,16 @@ describe('HighlightedCode', () => {
     expect(markup).toContain('token builtin');
     expect(markup).toContain('vec4f');
   });
+
+  it('tokenizes HTML markup used by complete examples', () => {
+    const markup = renderToStaticMarkup(
+      createElement(HighlightedCode, {
+        code: '<canvas id="webgpu-canvas"></canvas>',
+        language: 'markup',
+      }),
+    );
+
+    expect(markup).toContain('token tag');
+    expect(markup).toContain('webgpu-canvas');
+  });
 });

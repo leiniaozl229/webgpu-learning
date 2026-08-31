@@ -633,6 +633,8 @@ code:not(pre code) {
 .code-workbench__heading { min-width: 0; gap: var(--space-xs); }
 .code-workbench__heading strong { overflow: hidden; font-size: 0.9rem; text-overflow: ellipsis; white-space: nowrap; }
 .code-workbench__heading small { color: var(--color-code-muted); }
+.code-workbench__heading > div { display: grid; gap: 0.1rem; }
+.code-workbench__heading > svg { flex: 0 0 auto; width: 1rem; color: var(--color-accent); }
 .playground__header small { display: none; }
 .playground__actions { gap: 0.25rem; }
 
@@ -701,6 +703,10 @@ code:not(pre code) {
 .playground__footer--error { color: var(--color-code-error); }
 .playground__footer pre { overflow-x: auto; margin: 0; white-space: pre-wrap; }
 
+.complete-source { margin-top: var(--space-lg); }
+.complete-source__panel .code-block { margin: 0; border: 0; border-radius: 0; }
+.complete-source__panel .code-block pre { max-height: 42rem; overflow: auto; }
+
 .next-steps { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
 .next-steps.lesson-pagination { display: grid; align-items: start; }
 .next-steps h2 { margin-bottom: var(--space-xs); }
@@ -748,6 +754,15 @@ code:not(pre code) {
 .compute-resource-grid p,
 .shader-source-grid p { margin: 0; color: var(--color-text-soft); font-size: 0.86rem; }
 .compute-resource-grid code { display: inline-block; margin-bottom: var(--space-sm); font-size: 0.7rem; }
+
+.comparison-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.comparison-table { width: 100%; min-width: 38rem; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+.comparison-table th,
+.comparison-table td { padding: var(--space-md); border-bottom: 1px solid var(--color-border); vertical-align: top; }
+.comparison-table thead th { color: var(--color-text); background: var(--color-surface-soft); font-size: 0.78rem; letter-spacing: 0.03em; }
+.comparison-table tbody th { width: 8rem; color: var(--color-text); font-weight: 700; }
+.comparison-table tbody td { color: var(--color-text-soft); }
+.comparison-table tbody tr:last-child > * { border-bottom: 0; }
 
 .shader-stage-grid article > div { min-width: 0; }
 .shader-stage-grid h3 { margin: 0; font: 700 0.9rem var(--font-code); }
@@ -868,6 +883,12 @@ code:not(pre code) {
 .compute-values li { overflow: hidden; padding: 0.45rem; border: 1px solid var(--color-code-border); border-radius: var(--radius-sm); background: var(--color-surface-code); font: 700 0.76rem var(--font-code); text-align: center; text-overflow: ellipsis; }
 .compute-values--result li { border-color: var(--color-accent); color: var(--color-code-success); }
 .compute-values p { color: var(--color-code-muted); font-size: 0.76rem; }
+
+.chapter-checklist { display: grid; gap: var(--space-sm); margin: var(--space-lg) 0 0; padding: 0; list-style: none; }
+.chapter-checklist li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); align-items: center; gap: var(--space-sm); padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface-soft); }
+.chapter-checklist svg { width: 1.25rem; color: var(--color-success); }
+.chapter-checklist span { color: var(--color-text-soft); }
+.chapter-checklist strong { color: var(--color-text); }
 
 @media (min-width: 42rem) {
   .main-content { padding-right: var(--space-2xl); padding-left: var(--space-2xl); }

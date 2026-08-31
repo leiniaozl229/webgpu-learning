@@ -1,6 +1,6 @@
 # WebGPU Learning
 
-一套可运行、可修改的中文 WebGPU 教程。项目沿用 `webgl-learning` 的 React 文档式界面与实验台结构，课程分组和顺序严格跟随 [WebGPU Fundamentals 当前目录](https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-fundamentals.html#toc)，并使用 TypeScript、原生 WebGPU API 与 WGSL 实现。
+一套可运行、可修改、无需跳转外部资料才能完成学习闭环的中文 WebGPU 教程。项目沿用 `webgl-learning` 的 React 文档式界面与实验台结构，课程分组和顺序严格跟随 [WebGPU Fundamentals 当前目录](https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-fundamentals.html#toc)，并使用 TypeScript、原生 WebGPU API 与 WGSL 实现。
 
 当前包含七篇课程：
 

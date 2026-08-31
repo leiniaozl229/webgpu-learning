@@ -35,7 +35,7 @@ const codeTheme: PrismTheme = {
 
 interface HighlightedCodeProps {
   code: string;
-  language: 'typescript' | 'wgsl';
+  language: 'typescript' | 'wgsl' | 'markup';
   className?: string;
   ariaHidden?: boolean;
 }

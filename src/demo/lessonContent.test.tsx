@@ -31,3 +31,41 @@ describe('lesson table of contents', () => {
     });
   }
 });
+
+describe('shader data transfer lessons', () => {
+  it('keeps Inter-stage interpolation, frame submission and cleanup visible', () => {
+    const html = renderToStaticMarkup(<WgslInterstageArticle />);
+
+    expect(html).toContain('@interpolate');
+    expect(html).toContain('queue.submit');
+    expect(html).toContain('core/webgpu.ts');
+    expect(html).toContain('context.unconfigure');
+  });
+
+  it('keeps Uniform packing, binding and update timing visible', () => {
+    const html = renderToStaticMarkup(<UniformsArticle />);
+
+    expect(html).toContain('32 字节');
+    expect(html).toContain('group 0 · binding 0');
+    expect(html).toContain('queue.writeBuffer');
+    expect(html).toContain('core/uniforms.ts');
+  });
+
+  it('keeps Storage array sizing and instanced drawing visible', () => {
+    const html = renderToStaticMarkup(<StorageBuffersArticle />);
+
+    expect(html).toContain('maxStorageBufferBindingSize');
+    expect(html).toContain('3 × instanceCount');
+    expect(html).toContain('core/storageBuffers.ts');
+    expect(html).toContain('vertex pulling');
+  });
+
+  it('keeps Vertex Fetch byte layout and slot binding visible', () => {
+    const html = renderToStaticMarkup(<VertexBuffersArticle />);
+
+    expect(html).toContain('arrayStride');
+    expect(html).toContain('setVertexBuffer');
+    expect(html).toContain('60 字节');
+    expect(html).toContain('core/vertexBuffers.ts');
+  });
+});

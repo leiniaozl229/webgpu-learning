@@ -33,7 +33,7 @@ export function CodeBlock({ children, language = 'ts', label }: CodeBlockProps) 
       </figcaption>
       <HighlightedCode
         code={children}
-        language={language === 'wgsl' ? 'wgsl' : 'typescript'}
+        language={language === 'wgsl' ? 'wgsl' : language === 'html' ? 'markup' : 'typescript'}
       />
     </figure>
   );
