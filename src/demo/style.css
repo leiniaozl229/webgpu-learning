@@ -64,11 +64,11 @@
   --color-surface: #2b303b;
   --color-surface-soft: #343a46;
   --color-surface-code: #16181d;
-  --color-code-toolbar: #23272f;
+  --color-code-toolbar: #343a46;
   --color-code-border: #404756;
   --color-code-text: #f6f7f9;
   --color-code-muted: #99a1b3;
-  --color-code-hover: #343a46;
+  --color-code-hover: #404756;
   --color-code-canvas: #1c2028;
   --color-code-grid: #404756;
   --color-code-success: oklch(0.7 0.07 158);
@@ -424,6 +424,7 @@ code:not(pre code) {
 .lesson-section p + .code-block, .lesson-section p + .pipeline, .lesson-section p + .execution-flow, .lesson-section p + .playground { margin-top: var(--space-lg); }
 
 .code-block { overflow: hidden; margin-right: 0; margin-left: 0; border: 0; border-radius: var(--radius-lg); background: var(--color-surface-code); color: var(--color-code-text); }
+:root[data-theme="dark"] .code-block { border: 1px solid var(--color-code-border); }
 .code-block figcaption { display: flex; min-height: 2.75rem; align-items: center; justify-content: space-between; padding: 0 var(--space-md); border-bottom: 1px solid var(--color-code-border); background: var(--color-code-toolbar); color: var(--color-code-muted); font-size: 0.78rem; font-weight: 700; }
 .code-block button { display: flex; min-height: 2.75rem; align-items: center; gap: 0.35rem; padding: 0 var(--space-xs); border: 0; border-radius: 0.35rem; background: transparent; color: inherit; cursor: pointer; }
 .code-block button:hover { background: var(--color-code-hover); color: var(--color-code-text); }
