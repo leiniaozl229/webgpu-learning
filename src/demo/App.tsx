@@ -16,6 +16,12 @@ const lessonTitles: Record<LessonId, string> = {
   uniforms: 'Uniforms',
   'storage-buffers': '存储缓冲区',
   'vertex-buffers': '顶点缓冲区',
+  textures: '纹理基础',
+  'image-textures': '加载图像',
+  'video-textures': '高效使用视频',
+  'cube-maps': '立方体贴图',
+  'storage-textures': '存储纹理',
+  msaa: '多重采样 / MSAA',
   compute: '计算着色器基础',
 };
 
@@ -33,6 +39,24 @@ const StorageBuffersArticle = lazy(async () => ({
 }));
 const VertexBuffersArticle = lazy(async () => ({
   default: (await import('./components/VertexBuffersArticle')).VertexBuffersArticle,
+}));
+const TexturesArticle = lazy(async () => ({
+  default: (await import('./components/TexturesArticle')).TexturesArticle,
+}));
+const ImageTexturesArticle = lazy(async () => ({
+  default: (await import('./components/ImageTexturesArticle')).ImageTexturesArticle,
+}));
+const VideoTexturesArticle = lazy(async () => ({
+  default: (await import('./components/VideoTexturesArticle')).VideoTexturesArticle,
+}));
+const CubeMapsArticle = lazy(async () => ({
+  default: (await import('./components/CubeMapsArticle')).CubeMapsArticle,
+}));
+const StorageTexturesArticle = lazy(async () => ({
+  default: (await import('./components/StorageTexturesArticle')).StorageTexturesArticle,
+}));
+const MsaaArticle = lazy(async () => ({
+  default: (await import('./components/MsaaArticle')).MsaaArticle,
 }));
 const ComputeArticle = lazy(async () => ({
   default: (await import('./components/ComputeArticle')).ComputeArticle,
@@ -178,6 +202,12 @@ export function App() {
           {lessonId === 'uniforms' && <UniformsArticle toc={inlineTableOfContents} />}
           {lessonId === 'storage-buffers' && <StorageBuffersArticle toc={inlineTableOfContents} />}
           {lessonId === 'vertex-buffers' && <VertexBuffersArticle toc={inlineTableOfContents} />}
+          {lessonId === 'textures' && <TexturesArticle toc={inlineTableOfContents} />}
+          {lessonId === 'image-textures' && <ImageTexturesArticle toc={inlineTableOfContents} />}
+          {lessonId === 'video-textures' && <VideoTexturesArticle toc={inlineTableOfContents} />}
+          {lessonId === 'cube-maps' && <CubeMapsArticle toc={inlineTableOfContents} />}
+          {lessonId === 'storage-textures' && <StorageTexturesArticle toc={inlineTableOfContents} />}
+          {lessonId === 'msaa' && <MsaaArticle toc={inlineTableOfContents} />}
           {lessonId === 'compute' && <ComputeArticle toc={inlineTableOfContents} />}
         </Suspense>
         <TableOfContents

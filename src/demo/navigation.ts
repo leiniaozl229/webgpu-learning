@@ -4,6 +4,12 @@ export type LessonId =
   | 'uniforms'
   | 'storage-buffers'
   | 'vertex-buffers'
+  | 'textures'
+  | 'image-textures'
+  | 'video-textures'
+  | 'cube-maps'
+  | 'storage-textures'
+  | 'msaa'
   | 'how-it-works'
   | 'compute';
 
@@ -54,12 +60,12 @@ export const navigationGroups: NavigationGroup[] = [
       { id: 'storage-buffers', label: '存储缓冲区', href: lessonHref('storage-buffers'), depth: 1 },
       { id: 'vertex-buffers', label: '顶点缓冲区', href: lessonHref('vertex-buffers'), depth: 1 },
       section('纹理', 1),
-      planned('纹理基础', 2),
-      planned('加载图像', 2),
-      planned('高效使用视频', 2),
-      planned('立方体贴图', 2),
-      planned('存储纹理', 2),
-      planned('多重采样 / MSAA', 2),
+      { id: 'textures', label: '纹理基础', href: lessonHref('textures'), depth: 2 },
+      { id: 'image-textures', label: '加载图像', href: lessonHref('image-textures'), depth: 2 },
+      { id: 'video-textures', label: '高效使用视频', href: lessonHref('video-textures'), depth: 2 },
+      { id: 'cube-maps', label: '立方体贴图', href: lessonHref('cube-maps'), depth: 2 },
+      { id: 'storage-textures', label: '存储纹理', href: lessonHref('storage-textures'), depth: 2 },
+      { id: 'msaa', label: '多重采样 / MSAA', href: lessonHref('msaa'), depth: 2 },
       planned('即时变量', 1),
       planned('常量', 1),
       planned('着色器杂项输入', 1),
@@ -206,6 +212,73 @@ export const tableOfContentsByLesson: Record<LessonId, TableOfContentsItem[]> = 
     { label: '本章检查', href: '#chapter-checklist' },
     { label: '继续学习', href: '#next-steps' },
   ],
+  textures: [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: '纹理数据路径', href: '#data-path' },
+    { label: 'Texture 资源', href: '#texture-resource' },
+    { label: 'Sampler 与绑定', href: '#sampler-binding' },
+    { label: '采样实验', href: '#texture-lab' },
+    { label: '上传与绘制', href: '#command-flow' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
+  'image-textures': [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: '图像数据路径', href: '#data-path' },
+    { label: '解码与复制', href: '#decode-copy' },
+    { label: '方向与颜色', href: '#orientation-color' },
+    { label: '图像纹理实验', href: '#image-lab' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
+  'video-textures': [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: '视频数据路径', href: '#data-path' },
+    { label: 'External Texture 约定', href: '#external-contract' },
+    { label: '逐帧导入', href: '#frame-loop' },
+    { label: '视频纹理实验', href: '#video-lab' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
+  'cube-maps': [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: 'Cube 数据路径', href: '#data-path' },
+    { label: '六层布局', href: '#cube-layout' },
+    { label: '方向采样', href: '#direction-sampling' },
+    { label: '立方体贴图实验', href: '#cube-lab' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
+  'storage-textures': [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: 'Storage Texture 路径', href: '#data-path' },
+    { label: '存储纹理绑定', href: '#storage-binding' },
+    { label: 'Compute 到 Render', href: '#compute-flow' },
+    { label: '存储纹理实验', href: '#storage-texture-lab' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
+  msaa: [
+    { label: '本章输入约定', href: '#input-contract' },
+    { label: 'MSAA 数据路径', href: '#data-path' },
+    { label: 'sampleCount', href: '#sample-count' },
+    { label: 'Resolve 流程', href: '#resolve-flow' },
+    { label: 'MSAA 对比实验', href: '#msaa-lab' },
+    { label: '完整项目源码', href: '#complete-source' },
+    { label: '诊断与清理', href: '#diagnostics-cleanup' },
+    { label: '本章检查', href: '#chapter-checklist' },
+    { label: '继续学习', href: '#next-steps' },
+  ],
   'how-it-works': [
     { label: 'Shader 调用模型', href: '#shader-call-model' },
     { label: '六类数据来源', href: '#shader-data-sources' },
@@ -229,6 +302,12 @@ export const sourceByLesson: Record<LessonId, string> = {
   uniforms: 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-uniforms.html',
   'storage-buffers': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-storage-buffers.html',
   'vertex-buffers': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-vertex-buffers.html',
+  textures: 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-textures.html',
+  'image-textures': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-importing-textures.html',
+  'video-textures': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-textures-external-video.html',
+  'cube-maps': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-cube-maps.html',
+  'storage-textures': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-storage-textures.html',
+  msaa: 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-multisampling.html',
   'how-it-works': 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-how-it-works.html',
   compute: 'https://webgpufundamentals.org/webgpu/lessons/zh_cn/webgpu-compute-shaders.html',
 };
@@ -240,6 +319,12 @@ export function parseLessonId(search: string): LessonId {
     || lesson === 'uniforms'
     || lesson === 'storage-buffers'
     || lesson === 'vertex-buffers'
+    || lesson === 'textures'
+    || lesson === 'image-textures'
+    || lesson === 'video-textures'
+    || lesson === 'cube-maps'
+    || lesson === 'storage-textures'
+    || lesson === 'msaa'
     || lesson === 'how-it-works'
     || lesson === 'compute'
   ) return lesson;

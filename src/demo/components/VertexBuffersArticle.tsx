@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  ArrowRight,
   Braces,
   CheckCircle2,
   Database,
@@ -177,7 +178,8 @@ export function VertexBuffersArticle({ toc }: { toc?: ReactNode }) {
 
       <section id="next-steps" className="next-steps lesson-pagination">
         <LessonLink lessonId="storage-buffers"><ArrowLeft aria-hidden="true" /> 存储缓冲区</LessonLink>
-        <div><h2>接下来</h2><p>四种 Shader 数据路径已经连成一组：Inter-stage、Uniform、Storage 与 Vertex Buffer。下一组课程会把纹理、图像、视频和采样加入 Fragment Shader。</p></div>
+        <div><h2>接下来</h2><p>Vertex Buffer 已把 UV 送进 Shader。下一章创建第一张 GPUTexture，并用 Sampler 读取二维 texel。</p></div>
+        <LessonLink lessonId="textures">纹理基础 <ArrowRight aria-hidden="true" /></LessonLink>
       </section>
     </article>
   );

@@ -9,6 +9,12 @@ describe('parseLessonId', () => {
     expect(parseLessonId('?lesson=uniforms')).toBe('uniforms');
     expect(parseLessonId('?lesson=storage-buffers')).toBe('storage-buffers');
     expect(parseLessonId('?lesson=vertex-buffers')).toBe('vertex-buffers');
+    expect(parseLessonId('?lesson=textures')).toBe('textures');
+    expect(parseLessonId('?lesson=image-textures')).toBe('image-textures');
+    expect(parseLessonId('?lesson=video-textures')).toBe('video-textures');
+    expect(parseLessonId('?lesson=cube-maps')).toBe('cube-maps');
+    expect(parseLessonId('?lesson=storage-textures')).toBe('storage-textures');
+    expect(parseLessonId('?lesson=msaa')).toBe('msaa');
     expect(parseLessonId('?lesson=compute')).toBe('compute');
   });
 
@@ -55,5 +61,8 @@ describe('parseLessonId', () => {
       '计算着色器',
       '杂项',
     ]);
+    const textureItems = navigationGroups[0].items.filter((item) => item.depth === 2);
+    expect(textureItems).toHaveLength(6);
+    expect(textureItems.every((item) => item.id && item.href && !item.badge)).toBe(true);
   });
 });
