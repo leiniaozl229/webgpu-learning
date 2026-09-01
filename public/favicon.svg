@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .background { fill: #ffffff; }
+    .cube { fill: none; stroke: #087ea4; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #23272f; }
+      .cube { stroke: #58c4dc; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="16" />
+  <path class="cube" d="m32 12 17 9.5v21L32 52 15 42.5v-21Zm0 0v20m17-10.5L32 32 15 21.5M32 52V32" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

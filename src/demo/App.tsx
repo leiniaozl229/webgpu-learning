@@ -105,7 +105,7 @@ export function App() {
     document.documentElement.style.colorScheme = theme;
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content',
-      theme === 'dark' ? '#20232a' : '#f7f9fb',
+      theme === 'dark' ? '#23272f' : '#ffffff',
     );
     window.localStorage.setItem('webgpu-learning-theme', theme);
   }, [theme]);

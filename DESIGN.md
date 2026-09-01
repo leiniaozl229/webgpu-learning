@@ -2,15 +2,15 @@
 name: WebGPU Learning
 description: 一册可运行、可修改、持续生长的中文 WebGPU 实验讲义
 colors:
-  page: "oklch(0.985 0.006 230)"
-  surface: "oklch(1 0 0)"
-  surface-soft: "oklch(0.965 0.012 230)"
-  ink: "oklch(0.255 0.025 245)"
-  ink-soft: "oklch(0.47 0.025 245)"
-  border: "oklch(0.88 0.014 230)"
-  lab-blue: "oklch(0.69 0.145 238)"
-  lab-blue-strong: "oklch(0.52 0.17 244)"
-  lab-blue-soft: "oklch(0.95 0.035 238)"
+  page: "#ffffff"
+  surface: "#ffffff"
+  surface-soft: "#f6f7f9"
+  ink: "#23272f"
+  ink-soft: "#404756"
+  border: "#e5e7eb"
+  lab-blue: "#149eca"
+  lab-blue-strong: "#087ea4"
+  lab-blue-soft: "#e6f7ff"
   success: "oklch(0.6 0.14 158)"
   error: "oklch(0.58 0.19 28)"
 ---
@@ -23,23 +23,24 @@ colors:
 
 ## Visual Language
 
-- 冷白纸面、深蓝灰文字和少量实验室蓝构成浅色主题。
-- 深色主题使用安静的 Code Night 表面，保持相同的信息层级。
+- 浅色主题使用纯白页面、React 风格中性灰表面、深蓝灰文字和少量实验室蓝。
+- 深色主题使用 `#23272f` 页面、`#343a46` 中性表面和 `#16181d` 代码区，保持相同的信息层级。
+- 文字保持三级层次：标题使用 `ink`，正文使用 `ink-soft`，面包屑、状态和规划项使用 muted 色；两个主题维持相同语义。
 - 蓝色在单个视窗中控制在约 10%，只标记方向、状态和可操作位置。
 - 常驻卡片依靠 1px 边框和背景明度分层；阴影只用于移动抽屉等覆盖层。
 - 页面不使用渐变背景。
 
 ## Typography and Rhythm
 
-- 展示标题：每页一个，`clamp(2.5rem, 9vw, 4.6rem)`，紧凑行高。
-- 章节标题：清晰区分新概念，正文保持约 72ch 行长。
-- 正文：Atkinson Hyperlegible Next 与系统中文字体回退，行高 1.7。
+- 展示标题：每页一个，40px / 50px，桌面和移动端保持一致。
+- 章节标题：28px / 40px，清晰区分新概念。
+- 正文：17px / 30px，优先系统界面字体并使用 Atkinson Hyperlegible Next 回退。
 - 代码：SFMono-Regular、Consolas 与 Liberation Mono 回退。
 - 间距以 8px 为基准，触控目标最小 44px，圆角控制在 8–16px。
 
 ## Navigation
 
-课程使用查询参数和 History API 保留可复制 URL、浏览器前进与后退。桌面侧栏固定显示并可收起；窄屏使用带遮罩的抽屉，支持关闭按钮与 Escape。切换课程后焦点移动到新标题。
+课程使用查询参数和 History API 保留可复制 URL、浏览器前进与后退。桌面侧栏宽 320px、固定显示并可收起；导航文字按 20px、40px、60px 表达根级、一级和二级缩进。窄屏使用带遮罩的抽屉，支持关闭按钮与 Escape。页内锚点在常规窗口使用文章右上角的可展开目录，宽度达到 1440px 后切换为常驻右栏，并高亮当前章节。切换课程后焦点移动到新标题。
 
 ## Code and Lab Surfaces
 
